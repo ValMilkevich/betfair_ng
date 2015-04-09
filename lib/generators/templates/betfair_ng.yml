@@ -1,0 +1,19 @@
+development:
+  protocol: "https"
+  host: "betfair.com"
+  application_key: "APPKEY"
+  ssl_cert_path: "config/betfair_ng/client-2048.crt"
+  ssl_key_path: "config/betfair_ng/client-2048.key"
+  username: "username"
+  password: "password"
+  cache_expiration: 60
+
+test:
+  protocol: "https"
+  host: "betfair.com"
+  application_key: "APPKEY"
+  ssl_cert_path: "config/betfair_ng/client-2048.crt"
+  ssl_key_path: "config/betfair_ng/client-2048.key"
+  username: "username"
+  password: "password"
+  cache_expiration: 60
