@@ -31,6 +31,122 @@ Or
 Configure APP KEY: https://api.developer.betfair.com/services/webapps/docs/display/1smk3cen4v3lu3yomq5qye0ni/Application+Keys
 Configure Non-Interactive login ( the only supported now ) https://api.developer.betfair.com/services/webapps/docs/display/1smk3cen4v3lu3yomq5qye0ni/Non-Interactive+%28bot%29+login
 
+## Interactive Help 
+
+### List of available operations:
+    BetfairNg::Base.new.session.help
+
+:Operations:
+  - :Betting:
+    - :Base
+    - :CancelOrders
+    - :ListClearedOrders
+    - :ListCompetitions
+    - :ListCountries
+    - :ListCurrentOrders
+    - :ListEventTypes
+    - :ListEvents
+    - :ListMarketBook
+    - :ListMarketCatalogue
+    - :ListMarketProfitAndLoss
+    - :ListMarketTypes
+    - :ListTimeRanges
+    - :ListVenues
+    - :Navigation
+    - :PlaceOrders
+    - :ReplaceOrders
+    - :UpdateOrders
+  - :Accounts:
+    - :Base
+    - :CreateDeveloperAppKeys
+    - :GetAccountFunds
+    - :GetAccountStatement
+    - :GetAccountDetails
+    - :GetDeveloperAppKeys
+    - :ListCurrencyRates
+    - :TransferFunds
+  - :Auth:
+    - :Base
+    - :Certlogin
+    - :KeepAlive
+    - :Logout
+  - :Heartbeat:
+    - :Base
+    - :Heartbeat
+
+### Auth::Certlogin 
+
+    BetfairNg::Base.new.session.help('auth/certlogin')
+---
+:Operations:
+- :Betting:
+  - :Base
+  - :CancelOrders
+  - :ListClearedOrders
+  - :ListCompetitions
+  - :ListCountries
+  - :ListCurrentOrders
+  - :ListEventTypes
+  - :ListEvents
+  - :ListMarketBook
+  - :ListMarketCatalogue
+  - :ListMarketProfitAndLoss
+  - :ListMarketTypes
+  - :ListTimeRanges
+  - :ListVenues
+  - :Navigation
+  - :PlaceOrders
+  - :ReplaceOrders
+  - :UpdateOrders
+- :Accounts:
+  - :Base
+  - :CreateDeveloperAppKeys
+  - :GetAccountFunds
+  - :GetAccountStatement
+  - :GetAccountDetails
+  - :GetDeveloperAppKeys
+  - :ListCurrencyRates
+  - :TransferFunds
+- :Auth:
+  - :Base
+  - :Certlogin
+  - :KeepAlive
+  - :Logout
+- :Heartbeat:
+  - :Base
+  - :Heartbeat
+- auth/certlogin:
+  - :Dictionary:
+    - :Request: {}
+    - :Response:
+      - :error:
+        - :type: !ruby/class 'String'
+      - :result:
+        - :type: !ruby/class 'OpenStruct'
+  - :CurrentState:
+    - :Request:
+      - :username: username
+      - :password: password
+    - :Response: 
+    - :Operation: !ruby/object:BetfairNg::API::Operations::Auth::Certlogin::Operation
+      - config: !ruby/object:BetfairNg::Configuration::Config
+        - table:
+          - :cache: :simple
+          - :cache_expiration: 60
+          - :locale: :en
+          - :country: :com
+          - :protocol: https
+          - :keys:
+            - config/betfair_ng/client-2048.crt: !ruby/object:OpenSSL::X509::Certificate {}
+            - config/betfair_ng/client-2048.key: !ruby/object:OpenSSL::PKey::RSA {}
+          - :application_key: APP_KEY
+          - :username: username
+          - :password: password
+          - :token: 
+          - :ssl_key_path: config/betfair_ng/client-2048.key
+          - :ssl_cert_path: config/betfair_ng/client-2048.crt
+          - :host: betfair.com
+
 ## Usage
 
 Initialize base
@@ -40,11 +156,10 @@ Create session
     betfair.session.create
 
 List all Event types
-    betfair.perform('betting/list_event_types', {})
+    betfair.session.perform('betting/list_event_types', {})
 
 List all Soccer Events
-    betfair.perform('betting/list_events', {event_type_ids: [1]})
-
+    betfair.session.perform('betting/list_events', {event_type_ids: [1]})
 
 ## Contributing
 
