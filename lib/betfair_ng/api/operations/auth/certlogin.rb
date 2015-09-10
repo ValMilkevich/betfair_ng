@@ -15,14 +15,14 @@ module BetfairNg
         #  Declares class for Certlogin operation
         #
         module Certlogin
-          class Response < Base::Response
+          class Response < Auth::Base::Response
             field :result, type: OpenStruct
           end
 
-          class Request < Base::Request
+          class Request < Auth::Base::Request
           end
 
-          class Operation < Base::Operation
+          class Operation < Auth::Base::Operation
             configure do |operation|
               operation.endpoint_prefix = "/api/certlogin"
               operation.http_method = :post
