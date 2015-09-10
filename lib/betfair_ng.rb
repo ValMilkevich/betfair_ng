@@ -18,6 +18,7 @@ module BetfairNg
     #  Declares module for Concers shared modules
     #
     module Concerns
+      Gem.find_files("betfair_ng/api/concerns/http.rb", false).each {|file| require file }
       Gem.find_files("betfair_ng/api/concerns/*.rb", false).each {|file| require file }
     end
 
