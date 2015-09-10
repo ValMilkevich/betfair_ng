@@ -19,7 +19,7 @@ module BetfairNg
     #
     module Concerns
       require "betfair_ng/api/concerns/cache"      
-      
+
       Gem.find_files("betfair_ng/api/concerns/*.rb", false).each {|file| require file }
     end
 
@@ -42,6 +42,7 @@ module BetfairNg
     #  Declares module for Operations
     #
     module Operations
+      require 'betfair_ng/api/operations/base.rb'
       Gem.find_files("betfair_ng/api/operations/*.rb", false).each {|file| require file }
 
       include BetfairNg::API::Concerns::Aliases
@@ -49,24 +50,28 @@ module BetfairNg
       #  Declares module for all Auth operations
       #
       module Auth
+        require 'betfair_ng/api/operations/auth/base.rb'
         Gem.find_files("betfair_ng/api/operations/auth/*.rb", false).each {|file| require file }
       end
 
       #  Declares module for all Auth operations
       #
       module Betting
+        require 'betfair_ng/api/operations/betting/base.rb'
         Gem.find_files("betfair_ng/api/operations/betting/*.rb", false).each {|file| require file }
       end
 
       #  Declares module for all Accounts operations
       #
       module Accounts
+        require 'betfair_ng/api/operations/accounts/base.rb'
         Gem.find_files("betfair_ng/api/operations/accounts/*.rb", false).each {|file| require file }
       end
 
       #  Declares module for all Heartbeat operations
       #
       module Heartbeat
+        require 'betfair_ng/api/operations/heartbeat/base.rb'
         Gem.find_files("betfair_ng/api/operations/heartbeat/*.rb", false).each {|file| require file }
       end
     end
