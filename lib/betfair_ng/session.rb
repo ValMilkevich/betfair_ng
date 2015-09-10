@@ -54,13 +54,13 @@ module BetfairNg
     #  Performs a custom operation given by name
     #
     def perform(operation_name, params = {})
-      @operation = operation_by_name(operation_name)
+      operation = operation_by_name(operation_name)
 
       # Sharing the same cache
       #
-      @operation.config.set_cache_storage :session, self.config.cache_storage
-      @operation.perform(params)
-      @operation
+      operation.config.set_cache_storage :session, self.config.cache_storage
+      operation.perform(params)
+      operation
     end
 
     #  Shows help for the operation
