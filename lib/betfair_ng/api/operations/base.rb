@@ -22,7 +22,7 @@ module BetfairNg
 
           #  Holds reference to BetfairNg config
           #
-          attr_accessor :config, :data, :response
+          attr_accessor :config, :response
 
           #  Create the new object of config for each operation
           #  Initializes reference to BetfairNg config
@@ -44,8 +44,23 @@ module BetfairNg
               perform_get(params)
             end
 
-            self.response = self.class.operation.responder.new( self.http_data.to_h )
-            self.data = self.response.result || []
+            data
+          end
+
+          # Represents response method
+          #
+          def response
+            if self.http_data.present?
+              self.class.operation.responder.new( self.http_data.to_h )
+            else
+              nil
+            end
+          end
+
+          # Represents data method
+          #
+          def data
+            self.response.try(:result) || []
           end
 
           #  Returns true if the operation succedeed

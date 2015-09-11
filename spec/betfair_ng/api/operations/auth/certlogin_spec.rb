@@ -28,7 +28,7 @@ describe BetfairNg::API::Operations::Auth::Certlogin::Operation do
 
   describe "#headers" do
     it 'returns a Hash with X-Application' do
-      expect( subject.http_headers['X-Application'] ).to eq('yMOsRUnms1eEA2I1')
+      expect( subject.http_headers['X-Application'] ).to eq('j88ytx4Agw6DFX5k')
     end
   end
 

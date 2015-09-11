@@ -16,7 +16,7 @@ module SharedHelper
     end
 
     def default_config
-      BetfairNg.configure('../../config/betfair.yml')
+      BetfairNg.configure('../../config/betfair_ng.yml')
 
       @default_config = BetfairNg.config
     end
@@ -66,7 +66,7 @@ module SharedHelper
         'Accept-Encoding'=>'gzip;q=1.0,deflate;q=0.6,identity;q=0.3',
         'Content-Type'=>'application/x-www-form-urlencoded',
         'User-Agent'=>'Ruby',
-        'X-Application'=>'yMOsRUnms1eEA2I1'
+        'X-Application'=>'j88ytx4Agw6DFX5k'
       }
     end
 
@@ -88,20 +88,20 @@ module SharedHelper
       keep_alive: Proc.new(){
         stub_request(:get, "https://identitysso.betfair.com/api/keepAlive").
           with( :headers => auth_headers ).
-         to_return( :status => 200, :body =>  "{\"token\":\"mk7Wsgn5qAKcYbbgn1g4u/NORYQvbotYPYpuajeNoBY=\",\"product\":\"yMOsRUnms1eEA2I1\",\"status\":\"SUCCESS\",\"error\":\"\"}", :headers => response_headers
+         to_return( :status => 200, :body =>  "{\"token\":\"mk7Wsgn5qAKcYbbgn1g4u/NORYQvbotYPYpuajeNoBY=\",\"product\":\"j88ytx4Agw6DFX5k\",\"status\":\"SUCCESS\",\"error\":\"\"}", :headers => response_headers
          )
       },
 
       logout: Proc.new(){
         stub_request(:get, "https://identitysso.betfair.com/api/logout").with(headers: auth_headers).
-        to_return(:status => 200, :body => "{\"token\":\"Qk8nSVAXG/gWV1hT48mXyR95K3CKpWJj4HUEM3ph5Mg=\",\"product\":\"yMOsRUnms1eEA2I1\",\"status\":\"SUCCESS\",\"error\":\"\"}", :headers => response_headers
+        to_return(:status => 200, :body => "{\"token\":\"Qk8nSVAXG/gWV1hT48mXyR95K3CKpWJj4HUEM3ph5Mg=\",\"product\":\"j88ytx4Agw6DFX5k\",\"status\":\"SUCCESS\",\"error\":\"\"}", :headers => response_headers
           )
       },
 
       fail_logout: Proc.new(){
         stub = stub_request(:get, "https://identitysso.betfair.com/api/logout")
         stub = stub.with{ |request| !request.headers['X-Authentication'] }
-        stub = stub.to_return(:status => 200, :body => "{\"token\":\"\",\"product\":\"yMOsRUnms1eEA2I1\",\"status\":\"FAIL\",\"error\":\"INPUT_VALIDATION_ERROR\"}", :headers => response_headers
+        stub = stub.to_return(:status => 200, :body => "{\"token\":\"\",\"product\":\"j88ytx4Agw6DFX5k\",\"status\":\"FAIL\",\"error\":\"INPUT_VALIDATION_ERROR\"}", :headers => response_headers
           )
       },
 

@@ -6,7 +6,7 @@ module BetfairNg
   module Generators
 
     class InitializerGenerator < Rails::Generators::Base
-      desc "This generator creates an initializer config/initializers/betfair.rb and config/betfair.yml"
+      desc "This generator creates an initializer config/initializers/betfair.rb and config/betfair_ng.yml"
       source_root File.expand_path("../templates", __FILE__)
 
       def create_initializer_file

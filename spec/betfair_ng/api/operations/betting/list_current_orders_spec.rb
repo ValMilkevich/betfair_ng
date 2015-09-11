@@ -49,7 +49,7 @@ describe BetfairNg::API::Operations::Betting::ListCurrentOrders do
 
         expect(subject.request[:params]).to eq({})
         expect(subject.request(bet_ids: [1,2,3])[:params]).to eq({betIds: ["1", "2", "3"]})
-        expect{subject.request(bet_ids: [1,2,3], order_by: 'asdf')[:params]}.to raise_error
+        expect{subject.request(bet_ids: [1,2,3], order_by: 'asdf')[:params]}.to raise_error(ArgumentError)
         expect(subject.request(bet_ids: [1,2,3], order_by: 'EARLIEST_TO_LATEST')[:params]).to eq({betIds: ["1", "2", "3"], orderBy: 'EARLIEST_TO_LATEST'})
         expect(subject.request(bet_ids: [1,2,3], order_by: :EARLIEST_TO_LATEST)[:params]).to eq({betIds: ["1", "2", "3"], orderBy: 'EARLIEST_TO_LATEST'})
       end

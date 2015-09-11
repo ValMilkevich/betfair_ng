@@ -31,7 +31,7 @@ describe BetfairNg::API::Operations::Betting::Navigation::Operation do
   describe "#headers" do
     it 'doesn\'t change a Hash with X-Application after initialization' do
       session.config.token = 'ADSFASDFASDFSDF'
-      expect( subject.http_headers['X-Application'] ).to eq('yMOsRUnms1eEA2I1')
+      expect( subject.http_headers['X-Application'] ).to eq('j88ytx4Agw6DFX5k')
       expect( subject.http_headers['X-Authentication'] ).not_to eq('ADSFASDFASDFSDF')
     end
   end

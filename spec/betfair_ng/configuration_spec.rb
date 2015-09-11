@@ -12,10 +12,10 @@ describe BetfairNg::Configuration do
   describe "Config" do
     it "creates from yaml" do
       klass = Class.new(){ include BetfairNg::Configuration }
-      klass.configure('../../config/betfair.yml')
+      klass.configure('../../config/betfair_ng.yml')
 
       expect(klass.config).to be_kind_of(BetfairNg::Configuration::Config)
-      expect(klass.config.cache_expiration).to eq(30)
+      expect(klass.config.cache_expiration).to eq(60)
     end
 
     it "creates from block" do
@@ -30,7 +30,7 @@ describe BetfairNg::Configuration do
 
     it "block overrides file" do
       klass = Class.new(){ include BetfairNg::Configuration }
-      klass.configure('../../config/betfair.yml') do |conf|
+      klass.configure('../../config/betfair_ng.yml') do |conf|
         conf.cache_expiration = 120
       end
 
@@ -97,7 +97,7 @@ describe BetfairNg::Configuration do
     end
 
     describe "#host" do
-      subject { BetfairNg.configure('../../config/betfair.yml') }
+      subject { BetfairNg.configure('../../config/betfair_ng.yml') }
       it "raises if operation is not supported" do
         expect( subject.host('asdf')).to eq(nil)
       end
@@ -140,7 +140,7 @@ describe BetfairNg::Configuration do
 
     describe "#application_key" do
       it "presents" do
-        expect(subject.application_key).to eq("yMOsRUnms1eEA2I1")
+        expect(subject.application_key).to eq("j88ytx4Agw6DFX5k")
       end
     end
 

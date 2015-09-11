@@ -9,6 +9,13 @@ module BetfairNg
   require "betfair_ng/configuration"
   require "betfair_ng/session"
   require "betfair_ng/version"
+  require 'betfair_ng/api/concerns/aliases'
+  require 'betfair_ng/api/concerns/serialization'
+  require 'betfair_ng/api/concerns/field'
+  require 'betfair_ng/api/concerns/configurable'
+  require 'betfair_ng/api/concerns/cache'
+  require 'betfair_ng/api/concerns/http'
+
 
   include Configuration
   #  Declares the module for API operations etc.
@@ -18,14 +25,12 @@ module BetfairNg
     #  Declares module for Concers shared modules
     #
     module Concerns
-      require "betfair_ng/api/concerns/cache"      
-
       Gem.find_files("betfair_ng/api/concerns/*.rb", false).each {|file| require file }
     end
 
     #  Declares module for Types shared modules
     #
-    module DataTypes
+    module DataTypes      
       include BetfairNg::API::Concerns::Aliases
 
       #  Declares module for Enums shared modules

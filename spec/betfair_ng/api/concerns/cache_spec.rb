@@ -38,7 +38,7 @@ describe BetfairNg::API::Concerns::Configurable do
 
     it "raises if not cache_storage defined" do
       obj = Object.new
-      expect{klass_blank.new({}).with_cache(obj, 10){}}.to raise_error
+      expect{klass_blank.new({}).with_cache(obj, 10){}}.to raise_error(NotImplementedError)
     end
 
     it "stores the request" do

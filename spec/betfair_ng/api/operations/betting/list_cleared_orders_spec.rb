@@ -48,7 +48,7 @@ describe BetfairNg::API::Operations::Betting::ListClearedOrders do
 
         expect(subject.request[:params]).to eq({betStatus: :SETTLED})
         expect(subject.request(bet_ids: [1,2,3])[:params]).to eq({betStatus: :SETTLED, betIds: ["1", "2", "3"]})
-        expect{subject.request(bet_ids: [1,2,3], group_by: 'asdf')[:params]}.to raise_error
+        expect{subject.request(bet_ids: [1,2,3], group_by: 'asdf')[:params]}.to raise_error(ArgumentError)
         expect(subject.request(bet_ids: [1,2,3], group_by: 'EVENT_TYPE')[:params]).to eq({betStatus: :SETTLED, betIds: ["1", "2", "3"], groupBy: 'EVENT_TYPE'})
         expect(subject.request(bet_ids: [1,2,3], group_by: :EVENT_TYPE)[:params]).to eq({betStatus: :SETTLED, betIds: ["1", "2", "3"], groupBy: 'EVENT_TYPE'})
       end
