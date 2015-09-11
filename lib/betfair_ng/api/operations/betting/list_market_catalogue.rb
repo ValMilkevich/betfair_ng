@@ -21,7 +21,7 @@ module BetfairNg
         module ListMarketCatalogue
           class Request < Base::Request
     				field :filter, type: "BetfairNg::API::DataTypes::MarketFilter", required: true, default: {}
-    				field :market_projection, type: "BetfairNg::API::DataTypes::MarketProjection"
+    				field :market_projection, type: "BetfairNg::API::DataTypes::Enums::MarketProjection"
     				field :sort, type: "BetfairNg::API::DataTypes::Enums::MarketSort"
     				field :max_results, type: Fixnum, require: true, default: 100
             field :locale, type: String
