@@ -21,12 +21,12 @@ module BetfairNg
 				#  from, format: ISO 8601)
 				# @!attribute [w]
 				#
-				field :from, type: Date, required: false
+				field :from, type: Time, required: false
 
 				#  to, format: ISO 8601
 				# @!attribute [w]
 				#
-				field :to, type: Date, required: false
+				field :to, type: Time, required: false
 
 
 			end

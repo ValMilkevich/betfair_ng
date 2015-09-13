@@ -84,7 +84,7 @@ module BetfairNg
 				#  The most recent time an order was executed
 				# @!attribute [w]
 				#
-				field :last_match_time, type: Date, required: false
+				field :last_match_time, type: Time, required: false
 
 				#  The total amount matched
 				# @!attribute [w]

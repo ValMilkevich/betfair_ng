@@ -87,12 +87,12 @@ module BetfairNg
 				#  The date, to the second, the bet was placed.
 				# @!attribute [w]
 				#
-				field :placed_date, type: Date, required: true
+				field :placed_date, type: Time, required: true
 
 				#  The date, to the second, of the last matched bet fragment (where applicable)
 				# @!attribute [w]
 				#
-				field :matched_date, type: Date, required: true
+				field :matched_date, type: Time, required: true
 
 				#  The average price matched at. Voided match fragments are removed from this average calculation. The price is automatically adjusted in the event of non runners being declared with applicable reduction factors.
 				# @!attribute [w]

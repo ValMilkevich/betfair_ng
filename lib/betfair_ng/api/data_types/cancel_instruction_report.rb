@@ -42,7 +42,7 @@ module BetfairNg
 				#   
 				# @!attribute [w]
 				#
-				field :cancelled_date, type: Date, required: false
+				field :cancelled_date, type: Time, required: false
 
 			end
 		end

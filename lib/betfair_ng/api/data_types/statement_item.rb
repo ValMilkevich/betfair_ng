@@ -31,7 +31,7 @@ module BetfairNg
 				#  The date and time of the statement item, eg. equivalent to settledData for an exchange bet statement item. (in ISO-8601 format, not translated)
 				# @!attribute [w]
 				#
-				field :item_date, type: Date, required: true
+				field :item_date, type: Time, required: true
 
 				#  The amount of money the balance is adjusted by
 				# @!attribute [w]

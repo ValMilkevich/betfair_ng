@@ -30,22 +30,22 @@ module BetfairNg
 				#  Subscription Activated date
 				# @!attribute [w]
 				#
-				field :activated_date_time, type: Date, required: false
+				field :activated_date_time, type: Time, required: false
 
 				#  Subscription Expiry date
 				# @!attribute [w]
 				#
-				field :expiry_date_time, type: Date, required: false
+				field :expiry_date_time, type: Time, required: false
 
 				#  Subscription Expired date
 				# @!attribute [w]
 				#
-				field :expired_date_time, type: Date, required: false
+				field :expired_date_time, type: Time, required: false
 
 				#  Subscription Cancelled date
 				# @!attribute [w]
 				#
-				field :cancellation_date_time, type: Date, required: false
+				field :cancellation_date_time, type: Time, required: false
 
 				#  Subscription status
 				# @!attribute [w]

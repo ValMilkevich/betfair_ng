@@ -48,7 +48,7 @@ module BetfairNg
 				#  The scheduled start date and time of the event. This is Europe/London (GMT) by default
 				# @!attribute [w]
 				#
-				field :open_date, type: Date, required: false
+				field :open_date, type: Time, required: false
 
 			end
 		end

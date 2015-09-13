@@ -44,7 +44,7 @@ module BetfairNg
 				#  The date on which the bet was placed
 				# @!attribute [w]
 				#
-				field :placed_date, type: Date, required: false
+				field :placed_date, type: Time, required: false
 
 				#  The average price matched
 				# @!attribute [w]

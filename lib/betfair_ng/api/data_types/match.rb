@@ -48,7 +48,7 @@ module BetfairNg
 				#  Only present if no rollup
 				# @!attribute [w]
 				#
-				field :match_date, type: Date, required: false
+				field :match_date, type: Time, required: false
 
 			end
 		end

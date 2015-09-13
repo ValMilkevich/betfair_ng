@@ -92,7 +92,7 @@ module BetfairNg
 				#  Date and time of bet placement
 				# @!attribute [w]
 				#
-				field :placed_date, type: Date, required: false
+				field :placed_date, type: Time, required: false
 
 				#  Id of the selection (this will be the same for the same selection across markets)
 				# @!attribute [w]
@@ -107,7 +107,7 @@ module BetfairNg
 				#  Date and time at the bet portion was settled
 				# @!attribute [w]
 				#
-				field :start_date, type: Date, required: false
+				field :start_date, type: Time, required: false
 
 				#  Debit or credit
 				# @!attribute [w]

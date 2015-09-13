@@ -36,7 +36,7 @@ module BetfairNg
 				#  The time this market starts at, only returned when the MARKET_START_TIME enum is passed in the marketProjections
 				# @!attribute [w]
 				#
-				field :market_start_time, type: Date, required: false
+				field :market_start_time, type: Time, required: false
 
 				#  Details about the market
 				# @!attribute [w]

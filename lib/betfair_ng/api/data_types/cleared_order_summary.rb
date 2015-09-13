@@ -67,7 +67,7 @@ module BetfairNg
 				#  The date the bet order was placed by the customer. Only available at BET groupBy level.
 				# @!attribute [w]
 				#
-				field :placed_date, type: Date, required: false
+				field :placed_date, type: Time, required: false
 
 				#  The turn in play persistence state of the order at bet placement time. This field will be empty or omitted on true SP bets. Only available at BET groupBy level.
 				# @!attribute [w]
@@ -97,7 +97,7 @@ module BetfairNg
 				#  The date and time the bet order was settled by Betfair. Available at SIDE groupBy level or lower.
 				# @!attribute [w]
 				#
-				field :settled_date, type: Date, required: false
+				field :settled_date, type: Time, required: false
 
 				#  The number of actual bets within this grouping (will be 1 for BET groupBy)
 				# @!attribute [w]

@@ -58,7 +58,7 @@ module BetfairNg
 				#  If date and time the runner was removed
 				# @!attribute [w]
 				#
-				field :removal_date, type: Date, required: false
+				field :removal_date, type: Time, required: false
 
 				#  The BSP related prices for this runner
 				# @!attribute [w]

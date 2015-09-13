@@ -42,17 +42,17 @@ module BetfairNg
 				#  The market start time
 				# @!attribute [w]
 				#
-				field :market_time, type: Date, required: true
+				field :market_time, type: Time, required: true
 
 				#  The market suspend time
 				# @!attribute [w]
 				#
-				field :suspend_time, type: Date, required: true
+				field :suspend_time, type: Time, required: true
 
 				#  settled time
 				# @!attribute [w]
 				#
-				field :settle_time, type: Date, required: false
+				field :settle_time, type: Time, required: false
 
 				#  See MarketBettingType
 				# @!attribute [w]

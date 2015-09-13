@@ -28,7 +28,7 @@ describe BetfairNg::API::Concerns::Field do
 
     it "shows N level help" do
       klass = Class.new(OpenStruct){ include BetfairNg::API::Concerns::Field; field :name; field :event_type, type: BetfairNg::API::Operations::Betting::ListEvents::Response, required: true }
-      expect(klass.help).to eq({:name=>{}, :event_type=>{:type=>{:error=>{:type=>{:code=>{:type=>String, :required=>true}, :message=>{:type=>String}, :data=>{:type=>OpenStruct}}}, :result=>{:type=>BetfairNg::API::DataTypes::List, :of=>{:event=>{:type=>{:id=>{:type=>String, :required=>false}, :name=>{:type=>String, :required=>false}, :country_code=>{:type=>String, :required=>false}, :timezone=>{:type=>String, :required=>false}, :venue=>{:type=>String, :required=>false}, :open_date=>{:type=>Date, :required=>false}}, :required=>false}, :market_count=>{:type=>Fixnum, :required=>false}}}}, :required=>true}})
+      expect(klass.help).to eq({:name=>{}, :event_type=>{:type=>{:error=>{:type=>{:code=>{:type=>String, :required=>true}, :message=>{:type=>String}, :data=>{:type=>OpenStruct}}}, :result=>{:type=>BetfairNg::API::DataTypes::List, :of=>{:event=>{:type=>{:id=>{:type=>String, :required=>false}, :name=>{:type=>String, :required=>false}, :country_code=>{:type=>String, :required=>false}, :timezone=>{:type=>String, :required=>false}, :venue=>{:type=>String, :required=>false}, :open_date=>{:type=>Time, :required=>false}}, :required=>false}, :market_count=>{:type=>Fixnum, :required=>false}}}}, :required=>true}})
     end
   end
 
@@ -137,7 +137,7 @@ describe BetfairNg::API::Concerns::Field do
       expect( subject.cast_value(response_body.result, type: :String) ).to eq(response_body.result.to_s)
     end
     it ":Date" do
-      expect( subject.cast_value("2013-12-22", type: Date) ).to eq(Time.parse('2013-12-22').to_date)
+      expect( subject.cast_value("2013-12-22", type: Date) ).to eq(Date.parse('2013-12-22').to_date)
     end
 
     it ":Time" do

@@ -38,7 +38,7 @@ module BetfairNg
 				#  The start time of the market (in ISO-8601 format, not translated). Available at MARKET groupBy or lower.
 				# @!attribute [w]
 				#
-				field :market_start_time, type: Date, required: false
+				field :market_start_time, type: Time, required: false
 
 				#  The runner name, maybe including the handicap, translated into the requested locale. Available at BET groupBy.
 				# @!attribute [w]
